@@ -1,5 +1,5 @@
 # GC-content-distribution
-This workflow calculates GC content distribution across the Sumai 3, Rollag, and Glenn wheat genomes using BEDTools.
+This workflow calculates GC content distribution across wheat genomes using BEDTools.
 The resulting data can be used for Circos visualization or comparative GC composition analysis between subgenomes.
 
 ## 1. Make a directory
