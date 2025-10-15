@@ -41,6 +41,21 @@ END { print "Max GC%:", max, "\nMin GC%:", min }' gc-content-wheat-density-extra
 # Example Output:
 # Max GC%: 0.699800
 # Min GC%: 0.184000
+
+### or
+awk '{
+  val = $4
+  bin = int(val*10) / 10  # groups into bins like 0.1, 0.2, 0.3 ...
+  count[bin]++
+}
+END {
+  print "---- GC content ranges ----"
+  for (b=0.1; b<1.0; b+=0.1) {
+    low = sprintf("%.2f", b)
+    high = sprintf("%.2f", b+0.09)
+    printf "%s–%s\t%d\n", low, high, count[b]+0
+  }
+}' x8-gc-content-wheat-density
 ```
 
 ## 5. Frequency Distribution of GC Content
