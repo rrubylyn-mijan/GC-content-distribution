@@ -54,7 +54,7 @@ END {
     for (b in freq) {
         print b "-" b + bin_size "%:", freq[b]
     }
-}' x_sumai3_gc_content_density_extracted.bed | sort -n
+}' gc-content-wheat-density-extracted.bed | sort -n
 
 awk '{print $4}' gc-content-wheat-density-extracted.bed | sort -n | uniq -c
 ```
@@ -73,7 +73,7 @@ END {
 
 ## 7. Rename Chromosomes for Circos Compatibility
 ```bash
-sed 's/^chr/ta/' gc-content-wheat-density-extracted.bed > x8-gc-content-wheat-density-extracted.bed
+sed 's/^chr/ta/' gc-content-wheat-density-extracted.bed > x8-gc-content-wheat-density
 ```
 
 ## 8. Calculate GC Content per Chromosome
